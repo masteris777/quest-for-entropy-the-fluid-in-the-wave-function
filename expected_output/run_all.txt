@@ -1,0 +1,210 @@
+
+$ python the_zip.py 
+norm at start/end: 1.000000 / 1.000000  (must stay 1)
+packet width breathes between 0.488 and 1.025
+peak |psi| 0.904, peak flow 3.222
+wrote figures\the_zip.gif and the_zip_preview.png
+  [PASS] the packet keeps all of itself (the animation): norm 1.000000 -> 1.000000
+
+$ python the_letter.py 
+with i   : total stays 1.000000 -> 1.000000
+without i: total drops 0.891462 -> 2.505e-07 (3.56e+06x smaller)
+with i   : centre still swinging at the end, x = +2.150 (range -2.200 to +2.200)
+without i: centre settled at x = +0.00001
+wrote figures\the_letter.png
+  [PASS] without the i the packet fades away (article: about three million times): 3.56e+06x fainter
+  [PASS] without the i the packet stops in the middle: centre settled at x = +0.00001
+
+$ python pressure_slot_test.py 
+sidual": 0.6228539316499954,
+    "packet_independent": false,
+    "packet_metrics": [
+      {
+        "label": "base",
+        "lambda_packet": 0.08427266458241253,
+        "continuity_residual": 0.8820158609581976,
+        "hj_residual": 0.08893528622665461,
+        "potential_offset": 0.05145596553769971
+      },
+      {
+        "label": "narrow_fast",
+        "lambda_packet": 0.9113082263047477,
+        "continuity_residual": 0.9180558197171554,
+        "hj_residual": 0.08280999337689884,
+        "potential_offset": 0.05532246136983416
+      },
+      {
+        "label": "wide_slow",
+        "lambda_packet": 0.03061011665918104,
+        "continuity_residual": 0.8648767751150125,
+        "hj_residual": 0.09610368019113669,
+        "potential_offset": 0.04807774212015524
+      }
+    ]
+  }
+}
+  [PASS] three packets, three different answers (article: about thirty times apart): 29.8x apart  (0.0843, 0.9113, 0.0306)
+  [PASS] scanning the window does not rescue it (article: five times apart at best): best window still 5.4x apart
+  [PASS] scanning the window makes it worse (article: two hundred times apart at others): worst window 204x apart
+  [PASS] two settings return a negative coefficient (article: not something a pressure can be): 2 settings with a negative answer
+
+$ python exchange_rate.py 
+Stage 1 ===  N = 32  tau = 0.3
+  ||K_F - U||_F = 2.957e-14
+
+=== Stage 2 (locality in position basis) ===  N_lat=40 tau=0.3
+  r =   1  off-band relative = 8.644e-01
+  r =   2  off-band relative = 8.353e-01
+  r =   3  off-band relative = 6.217e-01
+  r =   4  off-band relative = 3.492e-01
+  r =   5  off-band relative = 1.561e-01
+  r =   6  off-band relative = 5.802e-02
+  r =   7  off-band relative = 1.847e-02
+  r =   8  off-band relative = 5.145e-03
+  r =  37  off-band relative = 1.375e-16
+  r =  38  off-band relative = 1.010e-16
+  r =  39  off-band relative = 0.000e+00
+
+=== EXCHANGE RATE SUMMARY ===
+{
+  "stage1_pass": true,
+  "stage1_best_err": 4.1655645551637515e-15,
+  "stage2_r_threshold_1e-3": 10,
+  "stage2_N_lat": 40,
+  "verdict": "Partial (existence yes; modest non-locality required)"
+}
+  [PASS] the classical machine and the quantum one are the same operator (article: fourteen decimal places): largest disagreement 4.166e-15
+
+$ python exchange_rate_harder.py 
+3)=4
+    N1=12  loc radius (1e-3)=4
+
+=== EXCHANGE RATE (HARDER) SUMMARY ===
+{
+  "rung_1_quartic": "Partial (radius grows with N: [10, 17, 26])",
+  "rung_2_morse": "Partial (radius grows with N: [6, 10, 14])",
+  "rung_3_doublewell": "Partial (radius grows with N: [10, 17, 27])",
+  "rung_4_coupled": {
+    "stage1_always_passes": true,
+    "loc_radius_vs_lambda": [
+      [
+        0.0,
+        4
+      ],
+      [
+        0.1,
+        4
+      ],
+      [
+        0.3,
+        4
+      ],
+      [
+        0.6,
+        4
+      ],
+      [
+        1.0,
+        4
+      ],
+      [
+        2.0,
+        4
+      ]
+    ],
+    "loc_radius_vs_N": [
+      [
+        6,
+        2
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        12,
+        4
+      ]
+    ]
+  }
+}
+  [PASS] the same trick works for a harder system (article: harder systems too): disagreement 7.771e-15
+
+$ python hbar_from_the_lattice.py 
+.0  alpha=0.1  dx=0.5  T=0.03  nx=2048  steps=30000
+
+=== Scan D: dx (continuum limit) ===
+  [D_dx0.25] running  c=1.0  alpha=0.1  dx=0.25  T=0.03  nx=4096  steps=30000
+  [D_dx0.5] running  c=1.0  alpha=0.1  dx=0.5  T=0.03  nx=2048  steps=30000
+  [D_dx1.0] running  c=1.0  alpha=0.1  dx=1.0  T=0.03  nx=1024  steps=30000
+
+=== HBAR HUNT SUMMARY ===
+{
+  "scan_A_slope_p": 2.314693823735856,
+  "scan_A_slope_sigma": 0.029436911020492645,
+  "verdict": "Fail",
+  "baseline_hbar_eff": 9.333645083739044e-06,
+  "dx_scan_hbar_eff": [
+    {
+      "dx": 0.25,
+      "hbar_eff": 6.887792629691583e-07
+    },
+    {
+      "dx": 0.5,
+      "hbar_eff": 9.333645083739044e-06
+    },
+    {
+      "dx": 1.0,
+      "hbar_eff": 0.0005087160454022085
+    }
+  ],
+  "mass_agreement_max_relerr": 0.029862166253416606
+}
+
+Done.
+  [PASS] a four-fold change of grid moves the constant (article: by 739): 738.6x over a 4x grid change
+
+$ python early_toy_orbitals.py 
+Generating discrete acoustic fluid standing waves...
+Saved standing wave harmonics to figures\early_toy_orbitals.png
+Done!
+
+$ python early_toy_decoherence.py 
+Starting Decoherence Rate Measurement ($T_2$ Coherence) Lab...
+Saved 'interference_blurring.png' showing the spatial intensity at various noise levels.
+Empirical Classical $T_2$ Decay Parameter (Variance scaling): 49.3332
+Saved 'visibility_decay.png' showing the exponential decay of coherence.
+
+$ python early_toy_collapse.py --output-dir figures
+Double-slit collapse lab complete.
+Control fringe visibility:  0.430
+Measured fringe visibility: 0.334
+Relative visibility drop:   22.3%
+Metrics saved to:           figures\double_slit_collapse_metrics.json
+Sweep summary:
+  eta=0.00 -> visibility=0.395 +/- 0.000
+  eta=0.20 -> visibility=0.376 +/- 0.000
+  eta=0.40 -> visibility=0.355 +/- 0.000
+  eta=0.60 -> visibility=0.330 +/- 0.000
+  eta=0.80 -> visibility=0.303 +/- 0.000
+  eta=1.00 -> visibility=0.277 +/- 0.000
+  [PASS] the early toys still run (shipped with their mistakes intact): 3 toys executed
+
+==============================================================
+[PASS] the packet keeps all of itself (the animation)
+[PASS] without the i the packet fades away (article: about three million times)
+[PASS] without the i the packet stops in the middle
+[PASS] three packets, three different answers (article: about thirty times apart)
+[PASS] scanning the window does not rescue it (article: five times apart at best)
+[PASS] scanning the window makes it worse (article: two hundred times apart at others)
+[PASS] two settings return a negative coefficient (article: not something a pressure can be)
+[PASS] the classical machine and the quantum one are the same operator (article: fourteen decimal places)
+[PASS] the same trick works for a harder system (article: harder systems too)
+[PASS] a four-fold change of grid moves the constant (article: by 739)
+[PASS] the early toys still run (shipped with their mistakes intact)
+==============================================================
+all 11 checks reproduced

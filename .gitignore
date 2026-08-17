@@ -1,0 +1,6 @@
+__pycache__/
+figures/
+output_*/
+metrics*.json
+report.md
+*.pyc
