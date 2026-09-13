@@ -1,5 +1,7 @@
 # The Fluid in the Wave Function — companion code
 
+**Article:** [Quest for Entropy #9 — "The Fluid in the Wave Function"](https://questforentropy.substack.com/p/the-fluid-in-the-wave-function)
+
 Everything the article quotes, runnable from scratch.
 
 ## Run it
