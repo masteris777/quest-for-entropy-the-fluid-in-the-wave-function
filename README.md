@@ -2,6 +2,8 @@
 
 **Article:** [Quest for Entropy #9 — "The Fluid in the Wave Function"](https://questforentropy.substack.com/p/the-fluid-in-the-wave-function)
 
+**Series:** ← [#8 The Crypto Bet](https://github.com/masteris777/quest-for-entropy-the-crypto-bet) · [#10 The Almost-Crystal](https://github.com/masteris777/quest-for-entropy-the-almost-crystal) →
+
 Everything the article quotes, runnable from scratch.
 
 ## Run it
