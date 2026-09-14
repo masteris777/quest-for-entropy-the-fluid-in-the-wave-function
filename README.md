@@ -1,6 +1,6 @@
 # The Fluid in the Wave Function — companion code
 
-**Article:** [Quest for Entropy #9 — "The Fluid in the Wave Function"](https://questforentropy.substack.com/p/the-fluid-in-the-wave-function)
+**Article:** [Quest for Entropy #9 — "The Fluid in the Wave Function"](https://questforentropy.com/p/the-fluid-in-the-wave-function) · also on [Substack](https://questforentropy.substack.com/p/the-fluid-in-the-wave-function)
 
 **Series:** ← [#8 The Crypto Bet](https://github.com/masteris777/quest-for-entropy-the-crypto-bet) · [#10 The Almost-Crystal](https://github.com/masteris777/quest-for-entropy-the-almost-crystal) →
 
